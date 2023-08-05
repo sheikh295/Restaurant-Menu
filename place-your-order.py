@@ -95,7 +95,7 @@ def drinks(order):
 
 def menu(order):
       print("Chinese, Fast Food, Traditional, Bar-B-Q")
-      typeOfFood = input("What type of food would You Like To Eat: ")
+      typeOfFood = input("What type of food would You Like To Eat (or if want to exit or skip to next: type exit or skip): ")
       if typeOfFood.title() == "Chinese":
             print("Kung Pao Chicken: $12.25\n"
                   "Chow Mein: $7.37\n"
@@ -200,6 +200,11 @@ def menu(order):
                         menu(order)
                   else:
                         exit()
+      elif typeOfFood.title() == "Exit":
+            exit("Thanks for your  visit at SHEIKH KABAB")
+
+      elif typeOfFood.title() == "Skip":
+            drinks(order)
 
       else:
             print("incorrect input, Please check your spellings")
