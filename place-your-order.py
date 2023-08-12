@@ -1,3 +1,5 @@
+print("\n"
+      "\n")
 print("Welcome to Sheikh Kabab")
 
 order = []
@@ -64,19 +66,25 @@ def billing(order, bill):
             elif a == "Juices":
                   bill.append(1.5)
       totalBill = sum(bill)
+      print()
       print(f"Your Order Includes {order}")
       print(f"Your Total Bill is '{round(totalBill,2)}'$")
+      print()
       moneystr = input("How much money do you have?: ")
       money = int(moneystr)
       if money < totalBill:
+            print()
             print("Sorry you don't have enough money for this order please comeback later. Thank You!!")
             exit()
       else:
             change = money - totalBill
-            print(f"This is your change '{change}'$ \n Thanks a lot for ordering from SHEIKH KABAB, Hope You like our Food and also hope to see you again")
+            print()
+            print(f"This is your change '{round(change, 2)}'$ \n"
+                  f"Thanks a lot for ordering from SHEIKH KABAB, Hope You like our Food and also hope to see you again")
             exit()
       exit()
 def drinks(order):
+      print()
       print("Coca Cola:$1  "
             "Fanta:$1  "
             "Pepsi:$1  "
@@ -88,27 +96,33 @@ def drinks(order):
             "Juices:$1.5  ")
       order1 = input("What Would you like to drink: ").title().replace(" ", "")
       order.append(order1)
+      print()
       order2 = input("Would you like to order anything else (yes or no)?: ").title()
       if order2 == "Yes":
             menu(order)
       billing(order, bill)
 
 def menu(order):
+      print()
       print("Chinese, Fast Food, Traditional, Bar-B-Q")
-      typeOfFood = input("What type of food would You Like To Eat (or if want to exit or skip to next: type exit or skip): ")
+      print()
+      typeOfFood = input("What type of food would You Like To Eat (or if want to exit or skip to drinks: type exit or skip): ")
       if typeOfFood.title() == "Chinese":
+            print()
             print("Kung Pao Chicken: $12.25\n"
                   "Chow Mein: $7.37\n"
                   "Chinese Hot Pot: $9.5\n"
                   "Spring Rolls: $5\n"
                   "Chicken Manchurian: $6.8")
+            print()
             order1 = input("What would you like to order: ").title().replace(" ", "")
-            print(order1)
             if order1 == "KungPaoChicken" or order1 == "ChowMein" or order1 == "ChineseHotPot" or order1 == "SpringRolls" or order1 == "ChickenManchurian":
+                  print()
                   rice = input("Would you like to order rice which will cost $3 (yes or no)?: ").title()
                   if rice == "Yes":
                         order.append("Rice")
                   order.append(order1)
+                  print()
                   order1 = input("Would you like to order anything else (yes or no)?: ").title()
                   if order1 == "Yes":
                         menu(order)
@@ -116,7 +130,9 @@ def menu(order):
                         print()
                   drinks(order)
             else:
+                  print()
                   print("Please Check your spellings and try again")
+                  print()
                   isContinue2 = input("Do you want to try again (yes or no): ").title()
                   if isContinue2 == "Yes":
                         menu(order)
@@ -124,17 +140,21 @@ def menu(order):
                         exit()
 
       elif typeOfFood.title() == "Fast Food":
+            print()
             print("Zinger Burger: $2.25\n"
                   "Beef Burger: $4.37\n"
                   "Chicken Tikka Pizza: $5\n"
                   "Chicken Shawarma: $2.5\n"
                   "Chicken Paratha Roll: $2.7")
+            print()
             order1 = input("What would you like to order: ").title().replace(" ", "")
             if order1 == "ZingerBurger" or order1 == "BeefBurger" or order1 == "ChickenTikkaPizza" or order1 == "ChickenShawarma" or order1 == "ChickenParathaRoll":
+                  print()
                   fries = input("Would You Like some Fries for just $1.25 (yes or no): ").title()
                   if fries == "Yes":
                         order.append("Fries")
                   order.append(order1)
+                  print()
                   order1 = input("Would you like to order anything else (yes or no)?: ").title()
                   if order1 == "Yes":
                         menu(order)
@@ -142,7 +162,9 @@ def menu(order):
                         print()
                   drinks(order)
             else:
+                  print()
                   print("Please Check your spellings and try again")
+                  print()
                   isContinue2 = input("Do you want to try again (yes or no): ").title()
                   if isContinue2 == "Yes":
                         menu(order)
@@ -150,17 +172,21 @@ def menu(order):
                         exit()
 
       elif typeOfFood.title() == "Traditional":
+            print()
             print("Chicken Makhni Handi: $8.5\n"
                   "Chicken Karahi: $8.5\n"
                   "Mutton Karahi: $11\n"
                   "Chicken Biryani: $3.25\n"
                   "Naan: $0.4")
+            print()
             order1 = input("What would you like to order: ").title().replace(" ", "")
             if order1 == "ChickenMakhniHandi" or order1 == "ChickenKarahi" or order1 == "MuttonKarahi" or order1 == "ChickenBiryani":
+                  print()
                   Naans = input("Would You Like some Naans for just $0.4 (yes or no): ").title()
                   if Naans == "Yes":
                         order.append("Naans")
                   order.append(order1)
+                  print()
                   order1 = input("Would you like to order anything else (yes or no)?: ").title()
                   if order1 == "Yes":
                         menu(order)
@@ -168,7 +194,9 @@ def menu(order):
                         print()
                   drinks(order)
             else:
+                  print()
                   print("Please Check your spellings and try again")
+                  print()
                   isContinue2 = input("Do you want to try again (yes or no): ").title()
                   if isContinue2 == "Yes":
                         menu(order)
@@ -176,17 +204,21 @@ def menu(order):
                         exit()
 
       elif typeOfFood.title() == "Bar-B-Q":
+            print()
             print("Chicken Seekh Kabab: $2.5\n"
                   "Beef Kabab: $3.5\n"
                   "Chicken Tikka Boti: $4\n"
                   "Chicken Malai Boti: $3\n"
                   "Naan: $0.4")
+            print()
             order1 = input("What would you like to order: ").title().replace(" ", "")
             if order1 == "ChickenSeekhKabab" or order1 == "BeefKabab" or order1 == "ChickenTikkaBoti" or order1 == "ChickenMalaiBoti":
+                  print()
                   Naans = input("Would You Like some Naans for just $0.4 (yes or no): ").title()
                   if Naans == "Yes":
                         order.append("Naans")
                   order.append(order1)
+                  print()
                   order1 = input("Would you like to order anything else (yes or no)?: ").title()
                   if order1 == "Yes":
                         menu(order)
@@ -194,20 +226,25 @@ def menu(order):
                         print()
                   drinks(order)
             else:
+                  print()
                   print("Please Check your spellings and try again")
+                  print()
                   isContinue2 = input("Do you want to try again (yes or no): ").title()
                   if isContinue2 == "Yes":
                         menu(order)
                   else:
                         exit()
       elif typeOfFood.title() == "Exit":
+            print()
             exit("Thanks for your  visit at SHEIKH KABAB")
 
       elif typeOfFood.title() == "Skip":
             drinks(order)
 
       else:
+            print()
             print("incorrect input, Please check your spellings")
+            print()
             isContinue1 = input("Do you want to try again (yes or no): ").title()
             if isContinue1 == "Yes":
                   menu(order)
